@@ -11,6 +11,7 @@ const swiper = new Swiper('.swiper', {
 
 // Таби 
 $(document).ready(function(){
+    
     $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function() {
         $(this)
         .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
@@ -89,22 +90,7 @@ $(document).ready(function(){
     $('form').submit(function(e) {
         e.preventDefault();
     
-        // Додавання валідації форми
-        // validateForms(this);
-    
-        // if ($(this).valid()) {
-        //     $.ajax({
-        //         type: "POST",
-        //         url: "mailer/smart.php",
-        //         data: $(this).serialize()
-        //     }).done(function() {
-        //         $('input').val("");
-        //         $('#consultation, #order').fadeOut();
-        //         $('.overlay, #thanks').fadeIn('slow');
-        //         $('form').trigger('reset');
-        //     });
-        // }
-        // return false;
+
         validateForms(this);
         if ($(this).valid()) {
             $('input').val("");
@@ -137,3 +123,4 @@ $(document).ready(function(){
         }
       });
 });
+
